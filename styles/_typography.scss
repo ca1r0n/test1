@@ -1,0 +1,60 @@
+// FONT FAMILY
+h1, h2, h3, h4,
+.typo_h1, .typo_h2, .typo_h3 ,.typo_h4{
+    font-family: 'Clash Display';
+}
+
+p, .typo_p1, .typo_p2 {
+  font-family: 'Inter';
+}
+
+
+// WIGHT
+h1, h2, h3,
+.typo_h1, .typo_h2, .typo_h3{
+  font-weight: 600;
+}
+
+h4, .typo_h4 {
+  font-weight: 500;
+}
+
+p, .typo_p1, .typo_p2 {
+  font-weight: 400;
+}
+
+// SIZE
+h1, .typo_h1 {
+  font-size: 9.3rem;
+}
+
+h2, .typo_h2 {
+  font-size: 4.5rem;
+}
+
+h3, .typo_h3 {
+  font-size: 32px;
+}
+
+h4, .typo_h4 {
+  font-size: 1.5rem;
+}
+
+p, .typo_p1 {
+  font-size: 1rem;
+}
+
+.typo_p2 {
+  font-size: 0.875rem;
+}
+
+// LINE HEIGHT
+h1, h2, h3, h4,
+.typo_h1, .typo_h2, .typo_h3 ,.typo_h4 {
+  line-height: 1.2;
+}
+
+p, .typo_p1, .typo_p2 {
+  line-height: 1.4;
+}
+

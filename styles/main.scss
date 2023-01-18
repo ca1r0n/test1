@@ -1,0 +1,39 @@
+@import "variables";
+@import "fonts";
+@import "typography";
+
+
+body {
+  background: $background;
+}
+
+* {
+  color: $clean;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.5rem;
+  position: relative;
+}
+
+@import "components/ui/title-box";
+@import "components/ui/button";
+@import "components/ui/card";
+@import "components/ui/input";
+@import "components/ui/blur-ellipse";
+@import "components/ui/star";
+
+@import "components/sections/header";
+@import "components/sections/welcome";
+@import "components/sections/about-us";
+@import "components/sections/technologies";
+@import "components/sections/footer";
+@import "components/sections/contact-us";
+@import "components/sections/steps";
+@import "components/sections/review";
+@import "components/sections/gallery";
+@import "components/sections/questions";

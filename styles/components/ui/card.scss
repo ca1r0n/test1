@@ -1,0 +1,21 @@
+.card {
+  background-color: $clean5;
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  &::after {
+    pointer-events:none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    padding: 1px;
+    z-index: -3;
+    background: $gradient;
+    mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+}

@@ -1,0 +1,35 @@
+.welcome {
+  height: 100vh;
+  background-image: url("../../../public/images/bg image.png"), ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+  }
+
+  &__subtext {
+    position: absolute;
+    top: 80%;
+    left: 100%;
+    transform: translate(-100%);
+  }
+
+  &__big {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,29 @@
+.button {
+  background: $linear2;
+  border-radius: 8px;
+  border: none;
+  padding: 1.5rem;
+  color: $primary100;
+  transition: color 0.2s;
+  cursor: pointer;
+
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &:hover {
+    color: $primary80;
+  }
+
+  &:active {
+    color: $clean;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
