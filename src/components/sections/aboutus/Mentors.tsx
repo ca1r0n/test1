@@ -107,6 +107,8 @@ function Avatar(props: AvatarProps) {
     >
         <div className={"avatar__img-box"}>
             <Image
+                width={188}
+                height={188}
                 src={props.AvatarUrl}
                 alt="avatar"
                 className={"avatar__img"}
