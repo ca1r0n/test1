@@ -12,19 +12,19 @@ import {Star} from "../../ui/star/Star";
 export function Technologies(): JSX.Element {
     const list: ListItemProps[] = [
         {
-            ImageUrl: AngularURL,
+            ImageUrl: AngularURL.src,
             Title: "Angular",
         },
         {
-            ImageUrl: ReactURL,
+            ImageUrl: ReactURL.src,
             Title: "React",
         },
         {
-            ImageUrl: VueURL,
+            ImageUrl: VueURL.src,
             Title: "Vue.js",
         },
         {
-            ImageUrl: JsURL,
+            ImageUrl: JsURL.src,
             Title: "JavaScript",
         },
     ]

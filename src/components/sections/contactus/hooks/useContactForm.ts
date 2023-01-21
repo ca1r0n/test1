@@ -9,7 +9,7 @@ export type Fields = {
     email?: string
 }
 
-let contactSchema: ObjectSchema<Fields> = object({
+let contactSchema = object({
     name: string().required().min(4),
     email: string().email().required(),
     phone: string().required().min(4),
@@ -25,12 +25,18 @@ export function usContactForm() {
             PostContact(data as Required<Fields>)
         }).catch(function (err) {
             const errors: Fields = {}
-            err.inner.forEach(e => {
-                errors[e.path] = e.message
+            err.inner.forEach((e: ValidationError)=> {
+                if (e.path) {
+                    errors[e.path as keyof Fields] = e.message
+                }
             });
             setErrors(errors)
         });
     }
 
-    return [register, handleSubmit(onSubmit), errors]
+    return {
+        register ,
+        handleSubmit: handleSubmit(onSubmit),
+        errors,
+    }
 }

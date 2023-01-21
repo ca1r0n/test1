@@ -61,15 +61,12 @@ export function Steps() {
             const first = list.current?.children[0]
             const second = list.current?.children[list.current?.children.length - 2]
 
-
-            console.log({
-                top: first?.clientHeight / 2,
-                bottom: second?.clientHeight / 2,
-            })
-            setLineCords({
-                top: first?.clientHeight / 2,
-                bottom: second?.clientHeight / 2,
-            })
+            if (first?.clientHeight && second?.clientHeight) {
+                setLineCords({
+                    top: first?.clientHeight / 2,
+                    bottom: second?.clientHeight / 2,
+                })
+            }
         }
     }, [list])
     //  ----

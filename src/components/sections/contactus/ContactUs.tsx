@@ -4,6 +4,7 @@ import {TitleBox} from "../../ui/titie-box/TitleBox";
 import {Button} from "../../ui/button/Button";
 import {Input} from "../../ui/input/Input";
 import {usContactForm} from "./hooks/useContactForm";
+import {FormEvent} from "react";
 
 export function ContactUs() {
 
@@ -18,10 +19,10 @@ export function ContactUs() {
 
 
 function Form() {
-    const [register, onSubmit, errors] = usContactForm()
+    const {register, handleSubmit, errors} = usContactForm()
 
     return <form
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         name={"contactus"}
         className={"contact-us__box"}
     >

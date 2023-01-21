@@ -9,46 +9,47 @@ export function Mentors() {
 
     useEffect(() => {
         if (canvasRef && !!canvasRef.current) {
-            // @ts-ignore
             let center = canvasRef.current?.getContext("2d")
-            let gradC= center.createLinearGradient(200, 0, 200, 200);
-            gradC.addColorStop(0, "rgba(21, 191, 253, 0.7)");
-            gradC.addColorStop(1, "rgba(156, 55, 253, 0.7)");
+            if (center) {
+                let gradC = center.createLinearGradient(200, 0, 200, 200);
+                gradC.addColorStop(0, "rgba(21, 191, 253, 0.7)");
+                gradC.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
-            center.setLineDash([3, 3]);
-            center.strokeStyle = gradC;
-            // center.createRadialGradient(75, 50, 5, 90, 60, 100);
-            center.beginPath();
-            center.moveTo(200, 0);
-            center.lineTo(200, 200);
-            // center.bezierCurveTo(20, 100, 200, 200, 200, 20);
-            center.stroke();
+                center.setLineDash([3, 3]);
+                center.strokeStyle = gradC;
+                center.beginPath();
+                center.moveTo(200, 0);
+                center.lineTo(200, 200);
+                center.stroke();
+            }
 
-            // @ts-ignore
             let left = canvasRef.current?.getContext("2d")
-            let gradL= left.createLinearGradient(200, 0, 200, 200);
-            gradL.addColorStop(0, "rgba(21, 191, 253, 0.7)");
-            gradL.addColorStop(1, "rgba(156, 55, 253, 0.7)");
+            if (left) {
+                let gradL = left.createLinearGradient(200, 0, 200, 200);
+                gradL.addColorStop(0, "rgba(21, 191, 253, 0.7)");
+                gradL.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
-            left.setLineDash([3, 3]);
-            left.strokeStyle = gradL;
-            left.beginPath();
-            left.moveTo(200, 0);
-            left.bezierCurveTo(200, 150, 0, 0, 20, 200);
-            left.stroke();
+                left.setLineDash([3, 3]);
+                left.strokeStyle = gradL;
+                left.beginPath();
+                left.moveTo(200, 0);
+                left.bezierCurveTo(200, 150, 0, 0, 20, 200);
+                left.stroke();
+            }
 
-            // @ts-ignore
             let right = canvasRef.current?.getContext("2d")
-            let gradR= right.createLinearGradient(200, 0, 200, 200);
-            gradR.addColorStop(0, "rgba(21, 191, 253, 0.7)");
-            gradR.addColorStop(1, "rgba(156, 55, 253, 0.7)");
+            if (right) {
+                let gradR = right.createLinearGradient(200, 0, 200, 200);
+                gradR.addColorStop(0, "rgba(21, 191, 253, 0.7)");
+                gradR.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
-            right.setLineDash([3, 3]);
-            right.strokeStyle = gradR;
-            right.beginPath();
-            right.moveTo(200, 0);
-            right.bezierCurveTo(200, 150, 400, 0, 380, 200);
-            right.stroke();
+                right.setLineDash([3, 3]);
+                right.strokeStyle = gradR;
+                right.beginPath();
+                right.moveTo(200, 0);
+                right.bezierCurveTo(200, 150, 400, 0, 380, 200);
+                right.stroke();
+            }
         }
     }, [canvasRef])
 
@@ -67,21 +68,21 @@ export function Mentors() {
             <Avatar
                 x={110}
                 y={120}
-                AvatarUrl={CenterAvatarUrl}
+                AvatarUrl={CenterAvatarUrl.src}
                 Title={"Kristin Watson"}
                 Description={"Front-end engineers work closely with designers"}
             />
             <Avatar
                 x={-100}
                 y={170}
-                AvatarUrl={LeftAvatarUrl}
+                AvatarUrl={LeftAvatarUrl.src}
                 Title={"Wade Warren"}
                 Description={"Front-end engineers work closely with designers"}
             />
             <Avatar
                 x={320}
                 y={170}
-                AvatarUrl={RightAvatarUrl}
+                AvatarUrl={RightAvatarUrl.src}
                 Title={"Robert Fox"}
                 Description={"Front-end engineers work closely with designers"}
             />

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import {MouseEventHandler} from "react";
 
 interface ButtonProps {
-    children?: JSX.Element
+    children?: JSX.Element | string
     className?: string
     onClick?: MouseEventHandler<HTMLButtonElement>
     disabled?: boolean
