@@ -16,6 +16,7 @@ export function Footer(): JSX.Element {
         <Container className={"footer__box"}>
             <div className="footer__block">
                 <Image
+                    loading={"lazy"}
                     src={logoURl}
                     alt={"logo"}
                     width={169}
@@ -111,7 +112,11 @@ function Social(){
     return <div className={"footer__social"}>
         {items.map((item, i) => {
             return <a href={item.To} key={i}>
-                <Image src={item.ImageUrl}  alt={""}/>
+                <Image
+                    src={item.ImageUrl}
+                    alt={""}
+                    loading={"lazy"}
+                />
             </a>
         })}
     </div>

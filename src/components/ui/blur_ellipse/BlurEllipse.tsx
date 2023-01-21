@@ -22,6 +22,7 @@ export function BlurEllipse(props: BlurEllipseProps) {
     //     }}
     // />
     return <Image
+        loading={"lazy"}
         src={BlurImageURl}
         alt={""}
         className={classNames("blur-ellipse", props.className)}

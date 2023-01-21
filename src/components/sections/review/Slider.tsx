@@ -122,6 +122,7 @@ function SlideBtn(props: SlideBtnProps) {
         onClick={props.OnClick}
     >
         <Image
+            loading={"lazy"}
             src={SliderBtnLeftUrl}
             alt={"slider_btn"}
             className={classNames(

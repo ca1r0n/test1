@@ -11,6 +11,7 @@ import {Questions} from "../src/components/sections/questions/Questions";
 import {setupStore} from "../src/store";
 import {Provider} from "react-redux";
 
+
 const store = setupStore()
 export default function Home() {
     return (

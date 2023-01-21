@@ -20,6 +20,7 @@ export function Header(): JSX.Element {
             <Image
                 src={logoURl} alt={"logotype"}
                 className={"header__logo"}
+                loading={"lazy"}
             />
             <NavList />
         </Container>

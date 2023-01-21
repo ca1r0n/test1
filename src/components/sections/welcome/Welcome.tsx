@@ -3,7 +3,9 @@ import {Button} from "../../ui/button/Button";
 import {BlurEllipse} from "../../ui/blur_ellipse/BlurEllipse";
 
 export function Welcome(): JSX.Element {
-    const handleClick = () => {}
+    const handleClick = () => {
+        console.log("click!")
+    }
 
     return <section id={"welcome"} className={"welcome"}>
         <Container className="welcome__box">

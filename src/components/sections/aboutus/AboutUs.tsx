@@ -1,11 +1,6 @@
 import Container from "../../ui/container/Container";
 import {TitleBox} from "../../ui/titie-box/TitleBox";
-import { useEffect, useRef} from "react";
 import Image from "next/image";
-
-import  CenterAvatarUrl from "../../../../public/images/Kristin Watson.png"
-import  LeftAvatarUrl from "../../../../public/images/Wade Warren.png"
-import  RightAvatarUrl from "../../../../public/images/Robert Fox.png"
 import FrontSvg from "../../../../public/images/svg/Front-End (Stroke).svg"
 import {Star} from "../../ui/star/Star";
 import {Mentors} from "./Mentors";
@@ -22,6 +17,7 @@ export  function AboutUs(): JSX.Element {
                     like a front-end engineer, too.
                 </p>
                 <Image
+                    loading={"lazy"}
                     className={"about-us__front"}
                     src={FrontSvg}
                     alt={"front"}

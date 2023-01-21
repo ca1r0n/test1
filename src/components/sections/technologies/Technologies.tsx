@@ -81,6 +81,7 @@ function ListItem(props: ListItemProps) {
         className={"technologies__item"}
     >
         <Image
+            loading={"lazy"}
             className={"technologies__item-img"}
             width={162}
             height={136}

@@ -4,7 +4,6 @@ import {TitleBox} from "../../ui/titie-box/TitleBox";
 import {Button} from "../../ui/button/Button";
 import {Input} from "../../ui/input/Input";
 import {usContactForm} from "./hooks/useContactForm";
-import {FormEvent} from "react";
 
 export function ContactUs() {
 

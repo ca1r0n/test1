@@ -2,7 +2,6 @@ import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {object, string, ValidationError} from "yup";
 import {sendContactUs} from "../../../../store/actions/contactus";
-import {AnyAction} from "redux";
 import {useAppDispatch, useAppSelector} from "../../../../store";
 
 export type Fields = {
@@ -11,7 +10,7 @@ export type Fields = {
     email?: string
 }
 
-let contactSchema = object({
+const contactSchema = object({
     name: string().required().min(4),
     email: string().email().required(),
     phone: string().required().min(4),

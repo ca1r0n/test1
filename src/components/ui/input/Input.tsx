@@ -1,7 +1,5 @@
-import {ChangeEvent, FocusEventHandler, forwardRef, HTMLAttributes, HTMLInputTypeAttribute, LegacyRef} from "react";
-import {Card} from "../card/Card";
+import  {ChangeEvent, FocusEventHandler, forwardRef, HTMLInputTypeAttribute} from "react";
 import classNames from "classnames";
-import {UseFormRegisterReturn} from "react-hook-form";
 
 interface InputProps {
     value?: string | readonly string[] | number
@@ -21,7 +19,7 @@ interface InputProps {
     required?: boolean;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     return <div className={"input"}>
         <div className={classNames(
             "input__box",
@@ -38,3 +36,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         {props.error && <p>{props.error}</p>}
     </div>
 })
+Input.displayName = "Input"
+
+export {Input}

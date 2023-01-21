@@ -5,13 +5,13 @@ import RightAvatarUrl from "../../../../public/images/Robert Fox.png";
 import Image from "next/image";
 
 export function Mentors() {
-    const canvasRef = useRef<HTMLCanvasElement>()
+    const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
     useEffect(() => {
         if (canvasRef && !!canvasRef.current) {
-            let center = canvasRef.current?.getContext("2d")
+            const center = canvasRef.current?.getContext("2d")
             if (center) {
-                let gradC = center.createLinearGradient(200, 0, 200, 200);
+                const gradC = center.createLinearGradient(200, 0, 200, 200);
                 gradC.addColorStop(0, "rgba(21, 191, 253, 0.7)");
                 gradC.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
@@ -23,9 +23,9 @@ export function Mentors() {
                 center.stroke();
             }
 
-            let left = canvasRef.current?.getContext("2d")
+            const left = canvasRef.current?.getContext("2d")
             if (left) {
-                let gradL = left.createLinearGradient(200, 0, 200, 200);
+                const gradL = left.createLinearGradient(200, 0, 200, 200);
                 gradL.addColorStop(0, "rgba(21, 191, 253, 0.7)");
                 gradL.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
@@ -37,9 +37,9 @@ export function Mentors() {
                 left.stroke();
             }
 
-            let right = canvasRef.current?.getContext("2d")
+            const right = canvasRef.current?.getContext("2d")
             if (right) {
-                let gradR = right.createLinearGradient(200, 0, 200, 200);
+                const gradR = right.createLinearGradient(200, 0, 200, 200);
                 gradR.addColorStop(0, "rgba(21, 191, 253, 0.7)");
                 gradR.addColorStop(1, "rgba(156, 55, 253, 0.7)");
 
@@ -61,7 +61,7 @@ export function Mentors() {
             }}
         >
             <canvas
-                ref={canvasRef as any} // TODO: fix
+                ref={canvasRef}
                 height={200}
                 width={400}
             />
@@ -107,6 +107,7 @@ function Avatar(props: AvatarProps) {
     >
         <div className={"avatar__img-box"}>
             <Image
+                loading={"lazy"}
                 width={188}
                 height={188}
                 src={props.AvatarUrl}

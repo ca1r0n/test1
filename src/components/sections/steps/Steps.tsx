@@ -57,7 +57,7 @@ export function Steps() {
     })
 
     useEffect(() => {
-        if (!!list) {
+        if (list) {
             const first = list.current?.children[0]
             const second = list.current?.children[list.current?.children.length - 2]
 

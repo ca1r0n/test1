@@ -19,21 +19,25 @@ export function Gallery() {
                     Chrome extension! In this course we will focus on coding exercises and projects.
                 </p>
                 <Image
+                    loading={"lazy"}
                     className={"gallery__image gallery__item--first"}
                     src={DeveloperOneUrl}
                     alt={"developer"}
                 />
                 <Image
+                    loading={"lazy"}
                     className={"gallery__image gallery__item--second"}
                     src={DeveloperTwoUrl}
                     alt={"developer"}
                 />
                 <Image
+                    loading={"lazy"}
                     className={"gallery__image gallery__item--third"}
                     src={DeveloperThirdUrl}
                     alt={"developer"}
                 />
                 <Image
+                    loading={"lazy"}
                     className={"gallery__image gallery__item--four"}
                     src={DeveloperFourUrl}
                     alt={"developer"}

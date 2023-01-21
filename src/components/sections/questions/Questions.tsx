@@ -126,6 +126,7 @@ function IconQuestion(props: IconQuestionProps) {
         onClick={props.OnClick}
     >
         <Image
+            loading={"lazy"}
             src={props.Active ? MinusUrl : PlusUrl}
             alt={""}
         />
