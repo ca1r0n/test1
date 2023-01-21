@@ -27,7 +27,7 @@ export function usContactForm() {
     const onSubmit = (data: Fields) => {
         setErrors({})
         contactSchema.validate(data, {abortEarly: false}).then(() => {
-            dispatch(sendContactUs(data as Required<Fields>) as AnyAction)
+            dispatch(sendContactUs(data as Required<Fields>))
         }).catch(function (err) {
             const errors: Fields = {}
             err.inner.forEach((e: ValidationError) => {
