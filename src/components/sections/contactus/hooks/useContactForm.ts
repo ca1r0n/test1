@@ -1,7 +1,9 @@
-import {FormEvent, useCallback, useRef, useState} from "react";
-import {PostContact} from "../../../../api/contact.api";
-import {SubmitHandler, useForm} from "react-hook-form";
-import {object, ObjectSchema, string, ValidationError} from "yup";
+import {useState} from "react";
+import {useForm} from "react-hook-form";
+import {object, string, ValidationError} from "yup";
+import {sendContactUs} from "../../../../store/actions/contactus";
+import {AnyAction} from "redux";
+import {useAppDispatch, useAppSelector} from "../../../../store";
 
 export type Fields = {
     name?: string
@@ -17,15 +19,18 @@ let contactSchema = object({
 
 export function usContactForm() {
     const [errors, setErrors] = useState<Fields>({})
+    const dispatch = useAppDispatch()
+    const {IsLoading, Status} = useAppSelector(state => state.contactUsReducer)
 
     const {register, handleSubmit} = useForm<Fields>()
 
     const onSubmit = (data: Fields) => {
-        contactSchema.validate(data, { abortEarly: false }).then(() => {
-            PostContact(data as Required<Fields>)
+        setErrors({})
+        contactSchema.validate(data, {abortEarly: false}).then(() => {
+            dispatch(sendContactUs(data as Required<Fields>) as AnyAction)
         }).catch(function (err) {
             const errors: Fields = {}
-            err.inner.forEach((e: ValidationError)=> {
+            err.inner.forEach((e: ValidationError) => {
                 if (e.path) {
                     errors[e.path as keyof Fields] = e.message
                 }
@@ -35,8 +40,10 @@ export function usContactForm() {
     }
 
     return {
-        register ,
+        register,
         handleSubmit: handleSubmit(onSubmit),
         errors,
+        IsLoading,
+        Status
     }
 }

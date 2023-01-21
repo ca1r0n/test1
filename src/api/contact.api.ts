@@ -1,6 +1,6 @@
 import {api} from "./api";
 
-interface PostContactDTO {
+export interface PostContactDTO {
     name: string
     phone: string
     email: string

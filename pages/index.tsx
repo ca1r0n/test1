@@ -8,20 +8,25 @@ import {Steps} from "../src/components/sections/steps/Steps";
 import {Review} from "../src/components/sections/review/Review";
 import {Gallery} from "../src/components/sections/gallery/Gallery";
 import {Questions} from "../src/components/sections/questions/Questions";
+import {setupStore} from "../src/store";
+import {Provider} from "react-redux";
 
+const store = setupStore()
 export default function Home() {
     return (
         <>
-            <Header />
-            <Welcome />
-            <AboutUs />
-            <Technologies />
-            <Steps />
-            <Questions />
-            <Review />
-            <Gallery />
-            <ContactUs />
-            <Footer />
+            <Provider store={store}>
+                <Header />
+                <Welcome />
+                <AboutUs />
+                <Technologies />
+                <Steps />
+                <Questions />
+                <Review />
+                <Gallery />
+                <ContactUs />
+                <Footer />
+            </Provider>
         </>
     )
 }

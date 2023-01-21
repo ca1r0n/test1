@@ -19,7 +19,13 @@ export function ContactUs() {
 
 
 function Form() {
-    const {register, handleSubmit, errors} = usContactForm()
+    const {
+        register,
+        handleSubmit,
+        errors,
+        IsLoading,
+        Status
+    } = usContactForm()
 
     return <form
         onSubmit={handleSubmit}
@@ -46,10 +52,12 @@ function Form() {
             {...register("email")}
         />
         <Button
+            disabled={IsLoading || Status == "ok"}
             fullWidth={true}
             type={"submit"}
         >
             Send
         </Button>
+        {Status == "error" && <p>TODO: вылезает notify что какая то ошибка(в дизайне нет)</p>}
     </form>
 }
