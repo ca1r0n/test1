@@ -2,9 +2,11 @@ import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import {contactUsSlice} from "./reducers/contactus";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {notifySlice} from "./reducers/notify";
 
 const rootReducer = combineReducers({
-    contactUsReducer: contactUsSlice.reducer
+    contactUsReducer: contactUsSlice.reducer,
+    notifyReducer: notifySlice.reducer,
 })
 
 export const setupStore = () => {

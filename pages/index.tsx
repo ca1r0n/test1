@@ -10,6 +10,7 @@ import {Gallery} from "../src/components/sections/gallery/Gallery";
 import {Questions} from "../src/components/sections/questions/Questions";
 import {setupStore} from "../src/store";
 import {Provider} from "react-redux";
+import {Notify} from "../src/components/sections/notify/Notify";
 
 
 const store = setupStore()
@@ -27,6 +28,7 @@ export default function Home() {
                 <Gallery />
                 <ContactUs />
                 <Footer />
+                <Notify />
             </Provider>
         </>
     )

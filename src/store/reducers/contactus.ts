@@ -16,6 +16,7 @@ export const contactUsSlice = createSlice({
     reducers: {
         start(state: ContactUsState) {
             state.IsLoading = true
+            state.Status = ""
         },
         success(state: ContactUsState) {
             state.IsLoading = false

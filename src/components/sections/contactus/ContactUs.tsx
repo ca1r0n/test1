@@ -57,6 +57,5 @@ function Form() {
         >
             Send
         </Button>
-        {Status == "error" && <p>TODO: вылезает notify что какая то ошибка(в дизайне нет)</p>}
     </form>
 }
